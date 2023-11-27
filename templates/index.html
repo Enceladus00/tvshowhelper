@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series Ratings Visualization</title>
+</head>
+<body>
+    <h1>Series Ratings Visualization</h1>
+    <form action="/result" method="post">
+        <label for="selected_show">Select a series:</label>
+        <select id="selected_show" name="selected_show" required>
+            {% for series in series_list %}
+                <option value="{{ series }}">{{ series }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="user_choice">Select heatmap or graph:</label>
+        <select id="user_choice" name="user_choice" required>
+            <option value="heatmap">Heatmap</option>
+            <option value="graph">Graph</option>
+        </select>
+        <br>
+        <button type="submit">Generate Visualization</button>
+    </form>
+</body>
+</html>
