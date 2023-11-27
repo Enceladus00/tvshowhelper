@@ -1,6 +1,3 @@
 # dvproject
-Couldn't spare time to work on the projects because of midterms and researches.
-I decided to use a few big datasets instead of that python package, to get expereince working on big data.
-So projects progress almost stopped, since I spend most of the time experimenting:
-1 - Data visulation
-2 - Working on enormous datasets.
+This is a simple side project that I use as an excuse to learn basic data visualization and analysis, and a little bit web development.
+I plan to develop it onto something big, but I still have a long way to go.
