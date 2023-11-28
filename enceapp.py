@@ -27,13 +27,16 @@ def result():
         heatmap_data = selected_df.pivot(index='Season', columns='Episode', values='Rating')
 
         plt.figure(figsize=(16, 4))
-        sns.heatmap(heatmap_data, cmap=custom_palette, annot=True, fmt=".1f", linewidths=.5)
-
-        plt.title(f'{selected_show} Ratings Heatmap')
+        ax = sns.heatmap(heatmap_data, cmap=custom_palette, annot=True, fmt=".1f", linewidths=.5)
+        ax.set_facecolor('#ECE4D7')
         img_path = 'static/heatmap.png'
         plt.savefig(img_path)
         plt.close()
-        return render_template('result.html', img_path=img_path, selected_show=selected_show)
+        highest_rated_episode = selected_df[selected_df['Rating'] == selected_df['Rating'].max()]['Episode'].iloc[0]
+        lowest_rated_episode = selected_df[selected_df['Rating'] == selected_df['Rating'].min()]['Episode'].iloc[0]
+        highest_rated_episode_season = selected_df[selected_df['Rating'] == selected_df['Rating'].max()]['Season'].iloc[0]
+        lowest_rated_episode_season = selected_df[selected_df['Rating'] == selected_df['Rating'].min()]['Season'].iloc[0]
+        return render_template('result.html', img_path=img_path, selected_show=selected_show, highest_rated_episode=highest_rated_episode, lowest_rated_episode=lowest_rated_episode, highest_rated_episode_season=highest_rated_episode_season, lowest_rated_episode_season=lowest_rated_episode_season)
     elif user_choice.lower() == 'graph':
         plt.figure(figsize=(12, 6))
         sns.lineplot(x='Episode', y='Rating', hue='Season', data=selected_df, marker='o', palette='viridis')
