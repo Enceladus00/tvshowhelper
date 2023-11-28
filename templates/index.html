@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Series Ratings Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>en</title>
 </head>
-<body>
-    <h1>Series Ratings Visualization</h1>
-    <form action="/result" method="post">
-        <label for="selected_show">Select a series:</label>
-        <select id="selected_show" name="selected_show" required>
-            {% for series in series_list %}
-                <option value="{{ series }}">{{ series }}</option>
-            {% endfor %}
-        </select>
-        <br>
-        <label for="user_choice">Select heatmap or graph:</label>
-        <select id="user_choice" name="user_choice" required>
-            <option value="heatmap">Heatmap</option>
-            <option value="graph">Graph</option>
-        </select>
-        <br>
-        <button type="submit">Generate Visualization</button>
-    </form>
+<img src="../static/banner.jpg" width="600px" height="336px">
+<body class = "index">
+    <div class="container">
+        <h1>enceladus00's rating analysis</h1>
+        <form action="/result" method="post">
+            <label for="selected_show">Select a series:</label>
+            <select id="selected_show" name="selected_show" required>
+                {% for series in series_list %}
+                    <option value="{{ series }}">{{ series }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="user_choice">Select heatmap or graph:</label>
+            <select id="user_choice" name="user_choice" required>
+                <option value="heatmap">Heatmap</option>
+                <option value="graph">Graph</option>
+            </select>
+            <br>
+            <button type="submit">Generate Visualization</button>
+        </form>
+    </div>
 </body>
 </html>
