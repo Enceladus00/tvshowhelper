@@ -6,19 +6,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Result</title>
 </head>
-<body>
+<body class="result">
     <h1>{{ selected_show }}</h1>
 
     <img src="{{ img_path }}" alt="Result Image">
 
-    <p>Highest Rated Season: {{ highest_rated_season }}</p>
-    <p>Highest Rated Episode: {{ highest_rated_episode }}</p>
-    <p>Lowest Rated Season: {{ lowest_rated_season }}</p>
-    <p>Lowest Rated Episode: {{ lowest_rated_episode }}</p>
-
-
+    <p>Lowest Rated Episode: Season {{ lowest_rated_episode_season }} Episode {{ lowest_rated_episode }}</p>
+    <p>Highest Rated Episode: Season {{ highest_rated_episode_season }} Episode {{ highest_rated_episode }}</p>
 
     <br>
-    <a href="/">Go Back</a>
+    <a href="/">Back</a>
 </body>
 </html>
