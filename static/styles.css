@@ -83,6 +83,8 @@ label {
     font-size: 20px;
     font-family: Arial;
 }
+/* Existing styles for other elements */
+
 .bottom-navbar {
     background-color: #d3bc96;
     position: fixed;
@@ -114,3 +116,38 @@ label {
     color: black;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+h2 {
+font-family: Arial;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
