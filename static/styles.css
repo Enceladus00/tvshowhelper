@@ -1,7 +1,10 @@
-body.index{
+/* styles.css */
+
+body.index {
     background-color: #ECE4D7;
 }
-body.result{
+
+body.result {
     background-image: url('arkaplan2.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,30 +13,104 @@ body.result{
     margin: 0;
     padding: 0;
 }
+
 h1 {
+    font-family: Arial, sans-serif;
+    font-size: 31px;
     text-align: center;
-    color: #000000;
+    color: #a596d3;
+    font-weight: bold;
+    word-spacing: 4px;
 }
+
+h1:hover{
+    color: #d3bc96;+
+}
+
 p {
     margin-left: 140px;
     margin-top: 25px;
     font-family: Arial;
     font-size: 25px;
 }
+
 .container {
     text-align: center;
     margin-top: 20px;
 }
 
 img {
-    display: block; /* Make the image a block element */
-    margin: 0 auto; /* center*/
+    display: block;
+    margin: 0 auto;
 }
 
 form {
-    margin-top: 20px; /* Add margin to the top of the form for some space */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-#selected_show {
+select {
     width: 15%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f8f8f8;
 }
+
+option {
+    font-size: 14px;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d3bc96;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a596d3;
+}
+label {
+    font-size: 20px;
+    font-family: Arial;
+}
+.bottom-navbar {
+    background-color: #d3bc96;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:22px;
+}
+
+.bottom-navbar .enceladus-link{
+    margin: 0 auto;
+}
+
+.bottom-navbar a:hover {
+    background-color: #a596d3;
+    color: black;
+}
+
