@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTaF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Result</title>
 </head>
 <body class="result">
-    <h1>{{ selected_show }}</h1>
+     <a href="https://www.imdb.com/title/tt{{id}}" target="_blank">
+        <button class="show-button">{{ selected_show }}</button>
+    </a>
 
     <img src="{{ img_path }}" alt="Result Image">
-
-    <p>Lowest Rated Episode: Season {{ lowest_rated_episode_season }} Episode {{ lowest_rated_episode }}</p>
-    <p>Highest Rated Episode: Season {{ highest_rated_episode_season }} Episode {{ highest_rated_episode }}</p>
+    <h3>{{highest_rated_episode_linker}}</h3>
+    <h3>Highest Rated Episode: <span class="highest_highlight">Season {{ highest_rated_episode_season }} Episode {{ highest_rated_episode }}</span></h3>
+    <h3>Lowest Rated Episode: <span class="lowest_highlight">Season {{ lowest_rated_episode_season }} Episode {{ lowest_rated_episode }}</span></h3>
 
     <br>
-    <a href="/">Back</a>
+    <a class="back_button" href="/">Back</a>
+<div class="bottom-navbar">
+        <a href="https://github.com/enceladus00" target="_blank" class="github-link">Github</a>
+        <a href="https://science.nasa.gov/saturn/moons/enceladus/" target="=_blank" class="enceladus-link">What is an "Enceladus"</a>
+        <a href="javascript:void(0);" onclick="openModal()" class="contact-link">Contact</a>
+    </div>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contact Information:</h2>
+            <p>melihkarakas61@gmail.com</p>
+        </div>
+    </div>
+
+    <!--Javascript -->
+    <script>
+
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        // Close the modal if the user clicks outside it
+        window.onclick = function (event) {
+            var modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
