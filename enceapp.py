@@ -10,7 +10,7 @@ ia = imdb.Cinemagoer()
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 custom_palette = palette.palettes['redngreen']
-csv_file_path = 'datasets/top250sorted.csv'
+csv_file_path = 'datasets/imdbTop250Sorted.csv'
 
 df = pd.read_csv(csv_file_path)
 series_list = df['Title'].unique().tolist()
@@ -47,7 +47,6 @@ def result():
             0]
         lowest_rated_episode_season = selected_df[selected_df['Rating'] == selected_df['Rating'].min()]['Season'].iloc[
             0]
-
         return render_template('result.html', img_path=img_path, selected_show=selected_show,
                                highest_rated_episode=highest_rated_episode, lowest_rated_episode=lowest_rated_episode,
                                highest_rated_episode_season=highest_rated_episode_season,
