@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\datasets\imdb_top_250_series_episode_ratings.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\datasets\imdb_top_250_series_global_ratings.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
